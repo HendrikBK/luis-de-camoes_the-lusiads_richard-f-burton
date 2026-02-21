@@ -14,6 +14,23 @@ section[epub|type~="dedication"] > *{
 	max-width: 80%;
 }
 
+section[epub|type~="dedication"] p span{
+	margin-left: 5em;
+}
+
+section[epub|type~="dedication"] p b{
+	font-size: larger;
+}
+
+#dedication-1 cite,
+#dedication-2 cite{
+	font-style: normal;
+}
+
+#dedication-2 > * + *{
+	margin-top: 1em;
+}
+
 @supports(display: flex){
 	section[epub|type~="dedication"]{
 		align-items: center;
