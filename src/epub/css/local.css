@@ -210,3 +210,10 @@ abbr[epub|type~="se:era"]{
 	text-indent: 0;
 	padding-left: 0;
 }
+
+/* Preface footer */
+
+footer{
+	margin-top: 1em;
+	text-align: right;
+}
