@@ -1,5 +1,6 @@
 @charset "utf-8";
 @namespace epub "http://www.idpf.org/2007/ops";
+@namespace xml "http://www.w3.org/XML/1998/namespace";
 
 /* Centered dedications */
 section[epub|type~="dedication"]{
@@ -144,3 +145,69 @@ section[epub|type~="epigraph"] > *{
 	}
 }
 /* End full-page epigraphs */
+
+/* Arguments */
+blockquote[xml|lang]{
+	font-style: italic;
+}
+
+header > table{
+	margin: auto;
+}
+
+header > table td:first-of-type{
+	text-align: initial;
+}
+
+header > table td:last-of-type{
+	padding-left: 1em;
+	text-align: right;
+}
+
+/* Poetry and verse */
+[epub|type~="z3998:poem"] section > header{
+	/* styling for stanza numbers */
+	display: block;
+	font-variant: small-caps;
+	margin: 2em 0 1em 0;
+	text-align: center;
+}
+
+[epub|type~="z3998:poem"] header + p{
+	/* adjusts spacing between number and stanza */
+	margin: 0;
+}
+
+[epub|type~="z3998:poem"] p,
+[epub|type~="z3998:verse"] p{
+	display: inline-block;
+	text-align: initial;
+	text-indent: 0;
+}
+
+[epub|type~="z3998:poem"] p > span,
+[epub|type~="z3998:verse"] p > span{
+	display: block;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
+[epub|type~="z3998:poem"] p > span + br,
+[epub|type~="z3998:verse"] p > span + br{
+	display: none;
+}
+
+p span.i1{
+	padding-left: 2em;
+	text-indent: -1em;
+}
+
+p span.i2{
+	padding-left: 3em;
+	text-indent: -1em;
+}
+
+p span.i6{
+	padding-left: 7em;
+	text-indent: -1em;
+}
