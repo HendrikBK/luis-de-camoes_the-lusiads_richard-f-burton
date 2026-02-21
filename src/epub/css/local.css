@@ -169,3 +169,8 @@ p span.i6{
 	padding-left: 7em;
 	text-indent: -1em;
 }
+
+/* Era */
+abbr[epub|type~="se:era"]{
+	font-variant: all-small-caps;
+}
