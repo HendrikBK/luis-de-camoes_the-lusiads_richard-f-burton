@@ -188,3 +188,21 @@ abbr[epub|type~="se:era"]{
 #rejected-stanzas table:last-of-type tr:last-of-type td:last-of-type{
 	border-top: black 1px solid;
 }
+
+/* Rejected stanzas headers */
+#rejected-stanzas[epub|type~="z3998:poem"] > header p{
+	display: block;
+	text-indent: 1em;
+}
+
+#rejected-stanzas[epub|type~="z3998:poem"] > header p:first-of-type{
+	text-indent: 0;
+}
+
+#rejected-stanzas[epub|type~="z3998:poem"] header p > span{
+	display: inline;
+	font-variant: normal;
+	text-align: initial;
+	text-indent: 0;
+	padding-left: 0;
+}
