@@ -174,3 +174,17 @@ p span.i6{
 abbr[epub|type~="se:era"]{
 	font-variant: all-small-caps;
 }
+
+/* Rejected stanzas table */
+#rejected-stanzas table:last-of-type td:nth-of-type(4){
+	text-align: initial;
+}
+
+#rejected-stanzas table:last-of-type td:last-of-type{
+	font-variant-numeric: tabular-nums;
+	text-align: right;
+}
+
+#rejected-stanzas table:last-of-type tr:last-of-type td:last-of-type{
+	border-top: black 1px solid;
+}
