@@ -174,6 +174,12 @@ p span.i6{
 	text-indent: -1em;
 }
 
+[epub|type~="z3998:poem"] header > p > span{
+	display: inline;
+	padding-left: 0;
+	text-indent: 0;
+}
+
 /* Era */
 abbr[epub|type~="se:era"]{
 	font-variant: all-small-caps;
