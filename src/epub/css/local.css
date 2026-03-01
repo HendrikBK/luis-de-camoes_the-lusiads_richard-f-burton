@@ -2,50 +2,46 @@
 @namespace epub "http://www.idpf.org/2007/ops";
 @namespace xml "http://www.w3.org/XML/1998/namespace";
 
-/* Centered dedications */
-section[epub|type~="dedication"]{
-	text-align: center;
+blockquote[xml|lang],
+#preface p[xml|lang]{
+	font-style: italic;
 }
 
-section[epub|type~="dedication"] > *{
-	display: inline-block;
+[epub|type~="z3998:signature"]{
+	font-variant: small-caps;
+}
+
+footer,
+[epub|type~="z3998:verse"] footer p{
+	margin-top: 1em;
+	text-align: right;
+}
+
+/* Dedication 1 */
+section#dedication-1 > p{
 	margin: auto;
 	margin-top: 3em;
 	max-width: 80%;
+	text-align: center;
 }
 
-section[epub|type~="dedication"] p span{
-	margin-left: 5em;
-}
-
-section[epub|type~="dedication"] p b{
+section#dedication-1 p b{
 	font-size: larger;
 }
 
-#dedication-2 > * + *{
-	margin-top: 1em;
+section#dedication-1 span:last-of-type{
+	margin-left: 5em;
 }
+/* End dedication 1 */
 
-#dedication-2 > p{
+/* Dedication 2 */
+#dedication-2 header p{
+	display: inline-block;
+	max-width: 60%;
+	text-align: justify;
 	text-indent: 0;
 }
-
-@supports(display: flex){
-	section[epub|type~="dedication"]{
-		align-items: center;
-		box-sizing: border-box;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		min-height: calc(98vh - 3em);
-		padding-top: 3em;
-	}
-
-	section[epub|type~="dedication"] > *{
-		margin: 0;
-	}
-}
-/* End centered dedications */
+/* End dedication 2 */
 
 /* All epigraphs */
 [epub|type~="epigraph"]{
@@ -103,25 +99,7 @@ section[epub|type~="epigraph"] > *{
 }
 /* End full-page epigraphs */
 
-/* Arguments */
-blockquote[xml|lang]{
-	font-style: italic;
-}
-
-table{
-	margin: auto;
-}
-
-table td:first-of-type{
-	text-align: initial;
-}
-
-table td:nth-of-type(2){
-	padding-left: 1em;
-	text-align: right;
-}
-
-/* Poetry and verse */
+/* Poem, verse */
 [epub|type~="z3998:poem"] section > header{
 	/* styling for stanza numbers */
 	display: block;
@@ -135,14 +113,14 @@ table td:nth-of-type(2){
 	margin: 0;
 }
 
-[epub|type~="z3998:poem"] p,
-[epub|type~="z3998:verse"] p{
+[epub|type~="z3998:poem"] section > p,
+[epub|type~="z3998:verse"] > p{
 	text-align: initial;
 	text-indent: 0;
 }
 
-[epub|type~="z3998:poem"] p > span,
-[epub|type~="z3998:verse"] p > span{
+[epub|type~="z3998:poem"] section > p > span,
+[epub|type~="z3998:verse"] > p > span{
 	display: block;
 	padding-left: 1em;
 	text-indent: -1em;
@@ -151,6 +129,10 @@ table td:nth-of-type(2){
 [epub|type~="z3998:poem"] p > span + br,
 [epub|type~="z3998:verse"] p > span + br{
 	display: none;
+}
+
+[epub|type~="z3998:verse"] > p + p{
+	margin-top: 1em;
 }
 
 p span.i1{
@@ -167,31 +149,31 @@ p span.i6{
 	padding-left: 7em;
 	text-indent: -1em;
 }
-
-[epub|type~="z3998:poem"] header > p > span{
-	display: inline;
-	padding-left: 0;
-	text-indent: 0;
-}
+/* End poem, verse */
 
 /* Era */
 abbr[epub|type~="se:era"]{
 	font-variant: all-small-caps;
 }
 
-/* Rejected stanzas table */
-#appendix table:last-of-type td:nth-of-type(4){
-	text-align: initial;
+/* Appendix */
+table{
+	margin: 1em auto 1em auto;
 }
 
-#appendix table:last-of-type td:last-of-type{
-	font-variant-numeric: tabular-nums;
+table tr td:last-of-type,
+table tfoot tr{
 	text-align: right;
 }
 
-#appendix table:last-of-type tr:last-of-type td:last-of-type{
-	border-top: black 1px solid;
+table tfoot td:last-of-type{
+	border-top: 1px solid;
 }
+
+section[epub|type~="z3998:poem"] section > section{
+	margin-top: 0;
+}
+/* End appendix */
 
 /* Footers */
 footer{
@@ -199,7 +181,7 @@ footer{
 	text-align: right;
 }
 
-/* Bridgeheads */
+/* Bridgehead */
 [epub|type~="bridgehead"]{
 	display: inline-block;
 	font-style: italic;
@@ -211,6 +193,11 @@ footer{
 [epub|type~="z3998:poem"] [epub|type~="bridgehead"]{
 	text-align: justify;
 }
+
+[epub|type~="bridgehead"] + div[epub|type~="z3998:verse"]{
+	margin-top: 1em;
+}
+/* End bridgehead */
 
 /* Signature */
 [epub|type~="z3998:signature"]{
