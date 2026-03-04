@@ -158,6 +158,7 @@ abbr[epub|type~="se:era"]{
 
 /* Appendix */
 table{
+	font-variant-numeric: tabular-nums;
 	margin: 1em auto 1em auto;
 }
 
